@@ -1,25 +1,22 @@
-<div class="special clearfix" ng-show="bcnjs.special">
-	<div class="special-next clearfix">
-		<div class="calendar">
-			<div class="day">{{bcnjs.date | date:'d'}}</div>
-			<div class="month">{{bcnjs.date | date:'MMMM'}}</div>
-		</div>
-		<div class="special-content">
-			<h3 ng-bind-html-unsafe="bcnjs.special.header"></h3>
-			<p ng-bind-html-unsafe="bcnjs.special.content"></p>
-		</div>
-	</div>
-</div>
+<div style="width: 100%;">
 
-<div class="next" ng-hide="bcnjs.special">
-		<div class="calendar">
-			<div class="day">{{bcnjs.date | date:'d'}}</div>
-			<div class="month">{{bcnjs.date | date:'MMMM'}}</div>
+<div class="header-container" style="float: left;">
+		<div>
+			<h1 id="title"><a id="logo" href="http://barcelonajs.org"><span>BarcelonaJS</span></a></h1>
 		</div>
-	<div class="next-sub">18.45 - 21.15<br /><strong>Mobile World Centre</strong><br />C/ de Fontanella, 2<br />Barcelona</div>
+</div>
+		<div id="intro" style="float: right; background-color: blue;" ng-hide="bcnjs.special">
+				<div class="calendar">
+					<div class="day">{{bcnjs.date | date:'d'}}</div>
+					<div class="month">{{bcnjs.date | date:'MMMM'}}</div>
+				</div>
+		</div>
 </div>
 
 <section class="talks clearfix">
+	<center>
+		<div>18.45 - 21.15 - <strong>Mobile World Centre</strong> - C/ de Fontanella, 2 - Barcelona</div>
+	</center>
 	<article class="talk" ng-class="{'empty':!talk.presenter}" ng-repeat="talk in bcnjs.talks">
 		<hgroup>
 			<h3>{{talk.title}}</h3>

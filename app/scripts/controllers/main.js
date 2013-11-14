@@ -25,4 +25,35 @@ angular.module('bcnjs')
 			}
 
 		}
+	})
+	.directive('backgroundAddress', function () {
+		var directiveObject = {
+			// A = attribute, E = element, C = class and M = comment
+			restrict: 'A',
+			scope: {
+				'backgroundAddress': '@'
+			},
+			link: function (scope, element) {
+
+				scope.$watch('backgroundAddress', function (newValue) {
+
+					element.append(createMap(newValue));
+				})
+				var createMap = function(address) {
+					var enc_address = encodeURIComponent(address);
+					var map = 'https://maps.googleapis.com/maps/api/staticmap?center=' + enc_address + '&size=1280x1280'
+					+'&markers=color:blue%7' + enc_address
+					+'&scale=2&zoom=15&sensor=false';
+					var backgroundEl = angular.element('<div id="backgroundMap"></div>');
+					backgroundEl.css('position', 'fixed');
+					backgroundEl.css({'top': '0', 'bottom': 0, 'left': 0, 'right': 0});
+					backgroundEl.css('background', 'url("' + map + '") no-repeat center center fixed');
+					backgroundEl.css('opacity', '0.2');
+					backgroundEl.css('z-index', '-1');
+					return backgroundEl;
+				}
+				// console.log(element);
+			}
+		};
+		return directiveObject;
 	});

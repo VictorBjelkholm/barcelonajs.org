@@ -95,6 +95,7 @@ a {
   font-size: 14px;
   border: 2px solid $dark;
   background: url('/images/franja.png') repeat-x center bottom;
+  background-color: #FFF !important;
 }
 
 .sponsor {
@@ -117,6 +118,7 @@ a {
 
 .empty {
   background: url('/images/franjabw.png') no-repeat center bottom;
+  background-color: #FFF !important;
 }
 
 .wrapper {
@@ -144,6 +146,7 @@ a {
   height: 150px;
   border: 2px solid $dark;
   background: url('/images/franja.png') no-repeat center bottom;
+  background-color: #FFF;
   margin: 0 auto;
 }
 
@@ -171,11 +174,12 @@ a {
   align: center;
   text-align: center;
   margin: 50px 0;
+  background-color: #FFF;
 }
 
 .talks, .sponsors {
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 250px;
 }
 
 #twitter {
@@ -336,4 +340,8 @@ footer {
     margin: 10px;
     padding: 20px 20px 40px 20px;
   }
+}
+
+#intro {
+  float: right;
 }
